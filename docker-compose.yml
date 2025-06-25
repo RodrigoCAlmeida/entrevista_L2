@@ -1,0 +1,20 @@
+version: '3.4'
+
+services:
+  api:
+    container_name: api
+    image: api/api-test
+    build:
+      context: .
+      dockerfile: DockerfileApi
+    restart: always
+    hostname: api
+    ports:
+      - 4505:4505
+    environment:
+      TZ: America/Sao_Paulo
+      AUTHORIZATION: 2hh344ERhnwh467g543
+    networks:
+      - api_net
+networks:
+  api_net:
